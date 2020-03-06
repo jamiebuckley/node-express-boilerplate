@@ -1,6 +1,6 @@
 
 exports.getUsers = () => {
-    return [
-        { name: "bob" }
-    ]
+  return [
+    { name: 'bob' }
+  ]
 }

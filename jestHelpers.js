@@ -3,5 +3,5 @@ global.mockReq = () => ({
 })
 
 global.mockRes = () => ({
-    json: jest.fn()
+  json: jest.fn()
 })

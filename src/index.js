@@ -9,6 +9,6 @@ router.use('/v1', require('./api/v1'))
 app.use('/api', router)
 
 app.get('/', (req, res) => {
-    res.send("hi")
+  res.send('hi')
 })
 app.listen(port, () => logger.info(`Application started on port ${port}`))
