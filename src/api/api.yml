@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: 'node-express-boilerplate'
+  description: 'A simple nodeJS boilerplate API'
+  version: '1.0.0'
+servers:
+  - url: https://api.example.com/v1
+    description: Basic example
+
+paths:
+  /users:
+    get:
+      tags:
+        - Users
+      summary: Returns a list of users
+      responses:
+        '200':
+          description: A JSON array of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The users name
