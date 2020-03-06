@@ -1,15 +1,20 @@
 const logger = require('../../logging')
+const UsersService = require('../../services/usersService')
 
-class UsersController  {
+class UsersController {
+
+    constructor(usersService = UsersService) {
+        this.usersService = usersService
+    }
 
     /**
-     * Return a list of users
-     * @param {Object} req The request
-     * @param {Object} res The response
+     * Returns a list of users
+     * @param {Object} req Express request object
+     * @param {Object} res Express response object
      */
     getUsers(req, res) {
         logger.debug("getUsers")
-        res.json([{ id: 1, name: "bob" }])
+        res.json(this.usersService.getUsers())
     }
 
     getUser(req, res) {
